@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPClub Membership</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;700&family=Quantico:wght@400;700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <!--Social icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: rgb(20, 16, 13);
+      color: white;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 18px;
+      font-family: 'Baloo Bhai 2', cursive;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    .back-link span {
+      font-size: 24px;
+      line-height: 3;
+     }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px 60px;
+    }
+
+    .card {
+      background-color: #413e3e;
+      border-radius: 30px;
+      padding: 40px 30px;
+      max-width: 990px;
+      width: 67%;
+      border: 4px solid white;
+      color: #000;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .heading {
+      font-size: 50px;
+      color: white;
+    }
+
+    .subheading {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+      justify-items: center;
+    }
+
+    .package {
+      background: transparent;
+      color: white;
+      text-align: left;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .package h3 {
+      font-family: 'Quantico', sans-serif;
+      font-size: 27px;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .package ul {
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .package ul li::before {
+      content: "•";
+      color: white;
+      font-weight: 700;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .package ul li {
+      font-family: 'Quantico', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 60px;
+      gap: 20px;
+    }
+
+    .contact {
+      font-family: 'Quantico', sans-serif;
+      font-size: 20px;
+      font-weight: 200;
+      color: white;
+      max-width: 40%;
+      text-align: left;
+    }
+
+    .contact strong {
+      font-weight: 700;
+    }
+
+      .contact p {
+      font-size: 19px;
+    }
+
+    .notes {
+      background: #d9d9d9;
+      border: 2px solid white;
+      border-radius: 40px;
+      padding: 25px;
+      width: 280px;
+      height: 320px;
+      font-family: 'Quantico', sans-serif;
+      text-align: left;
+      box-sizing: border-box;
+      margin-left: 56%;
+      margin-top: -120px;
+    }
+
+    .notes strong {
+      font-size: 22px;
+      font-weight: 700;
+      color: black;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .notes ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .notes ul li {
+      font-size: 20px;
+      font-weight: 400;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+ /* Footer Styles */
+ .footer {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-column h3 {
+      font-family: sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    .footer-column ul li a {
+       font-family: sans-serif;
+        font-size: 18px;   
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        letter-spacing: 0.05em;
+    }
+
+.footer-column ul li a:hover{
+       color:rgb(216, 164, 122);
+       transition: 0.3s;
+    }
+
+  .email a{
+    color: white;
+    text-decoration: none;
+  }
+
+   .email a:hover{
+    color:rgb(216, 164, 122);
+    transition: 0.3s;
+  }
+
+.footer-bottom .email {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 0.22em;  /* 22% */
+}
+
+.footer-bottom .name {
+  background-color: black;
+  color: white;
+ font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.footer-bottom .copyright {
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+    .footer-bottom hr{
+      margin-left: 50px;
+      margin-right: 50px;
+      
+}
+
+    .footer-bottom {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .fa-facebook-f{
+      color: white;
+    }
+
+    .fa-facebook-f:hover{
+      color: blue;
+      transform: scale(1.3);
+    }
+
+    .fa-instagram{
+      color: white;
+    }
+
+    .fa-instagram:hover{
+      color: rgb(204, 45, 71);
+      transform: scale(1.3);
+    }
+
+    .fa-youtube{
+      color: white;
+    }
+
+    .fa-youtube:hover{
+      color: #ff0000;
+      transform: scale(1.3);
+    }
+
+    .social-icons a i {
+      transition: transform 0.3s ease, color 0.3s ease;
+      font-size: 22px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">&lt; Back</a>
+
+  <div class="page">
+    <div class="card">
+      <div class="logo">SP<span>Club</span></div>
+      <h1 class="heading">MEMBERSHIP</h1>
+      <h2 class="subheading">PRICING LIST</h2>
+      <br>
+      <br>
+
+      <div class="packages">
+        <!-- Row 1 -->
+        <div class="package">
+          <h3>SILVER PACKAGE</h3>
+          <ul>
+            <li>3 SESSIONS, 60 MINS</li>
+            <li>PRICE: $100/MONTH</li>
+          </ul>
+        </div>
+
+        <div class="package">
+          <h3>GOLD PACKAGE</h3>
+          <ul>
+            <li>4 SESSIONS, 60 MINS</li>
+            <li>PRICE: $150/MONTH</li>
+          </ul>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="package">
+          <h3>PLATINUM PACKAGE</h3>
+          <ul>
+            <li>5 SESSIONS, 60 MINS</li>
+            <li>PRICE: $200/MONTH
+          </ul>
+        </div>
+
+        <div class="package">
+          <h3>ONLINE TRAINING</h3>
+          <ul>
+            <li>3 SESSIONS, 40 MINS</li>
+            <li>PRICE: $100/MONTH</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="bottom-section">
+        <div class="contact">
+          <strong>FOR MORE INFORMATION</strong><br/> 
+          <br>
+           <p>WHATSAPP / CALL: +263 77 621 6379</p>
+        </div>
+
+        <div class="notes">
+          <strong>IMPORTANT NOTES:</strong>
+          <ul>
+            <li>Discounts available for students and family members.</li>
+            <li>Freezing membership is only applicable to the platinum members only.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <!-- Footer Section -->
+ <section class="Footer">
+    <div class="footer">
+      <div class="footer-column">
+        <h3>SPCLUB</h3>
+        <ul>
+          <li><a href="index.html#fitness">Fitness</a></li>
+          <li><a href="index.html#apparel">Apparel</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="return_policy.html">Return Policy</a></li>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1FTpcjc3Xf/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/spclub_ag?igsh=NWlmNHI3ajNhdzc=" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@spclub_ag" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <hr>
+        <br>
+      </div>
+
+      
+      <div class="email"><a href="mailto:surpasspotentialclub@gmail.com">surpasspotentialclub@gmail.com</a></div>
+      <br />
+      <div class="name">Harare, Zimbabwe</div>
+      <div class="copyright">
+        <br /><br /><br /><br />
+        &copy; 2025 SURPASSPOTENTIALCLUB
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

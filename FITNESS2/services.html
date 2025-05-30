@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gym Workout Shop</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Open+Sans:wght@400;700&family=Orbitron:wght@800&display=swap" rel="stylesheet">
+
+  <!--Social icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: white;
+      color: #000;
+      
+    }
+
+    .about {
+      background-color: #d6d6d6;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 18px;
+      font-family: 'Baloo Bhai 2', cursive;
+      font-size: 18px;
+      font-weight: 600;
+      color: black;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    .back-link span {
+      font-size: 24px;
+      line-height: 3;
+     }
+
+    .items,
+    .item,
+    .things {
+      color: black;
+      margin-left: 280px;
+      margin-right: 180px;
+    }
+
+    .things p,
+    .items p,
+    .item p {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+    }
+
+    .item h4,
+    .items h4,
+    .things h4 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 100%;
+    }
+
+    .items h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .about hr {
+      margin-left: 0;
+      margin-right: auto;
+      width: calc(100% - 100px);
+      border: 1px solid #000;
+    }
+
+ /* Footer Styles */
+  .footer {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-column h3 {
+      font-family: sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    .footer-column ul li a {
+       font-family: sans-serif;
+        font-size: 18px;   
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        letter-spacing: 0.05em;
+    }
+
+.footer-column ul li a:hover{
+       color:rgb(216, 164, 122);
+       transition: 0.3s;
+    }
+
+  .email a{
+    color: white;
+    text-decoration: none;
+  }
+
+   .email a:hover{
+    color:rgb(216, 164, 122);
+    transition: 0.3s;
+  }
+
+.footer-bottom .email {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 0.22em;  /* 22% */
+}
+
+.footer-bottom .name {
+  background-color: black;
+  color: white;
+ font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 20px 0;
+  line-height: 1;
+}
+
+.footer-bottom .copyright {
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+    .footer-bottom hr{
+      margin-left: 50px;
+      margin-right: 50px;
+      
+}
+
+    .footer-bottom {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .fa-facebook-f{
+      color: white;
+    }
+
+    .fa-facebook-f:hover{
+      color: blue;
+      transform: scale(1.3);
+    }
+
+    .fa-instagram{
+      color: white;
+    }
+
+    .fa-instagram:hover{
+      color: rgb(204, 45, 71);
+      transform: scale(1.3);
+    }
+
+    .fa-youtube{
+      color: white;
+    }
+
+    .fa-youtube:hover{
+      color: #ff0000;
+      transform: scale(1.3);
+    }
+
+    .social-icons a i {
+      transition: transform 0.3s ease, color 0.3s ease;
+      font-size: 22px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+   
+    
+  </style>
+</head>
+
+<body>
+  <section class="about">
+    <a href="index.html" class="back-link">&lt;Back</a>
+
+
+    <div class="items">
+      <h1>SERVICES OFFERED</h1>
+      <br>
+      <br>
+      <br>
+      <p>Conditional Workouts</p>
+      <hr />
+      <h4>Master your strengths, speed, endurance and agility!</h4>
+      <p>
+        Conditional workouts are built to prepare your body to perform at its absolute best – <br />
+        anytime, anywhere. <br />
+        Push your limits, shatter your goals, unlock elite athletic performance with our high- <br />
+        intense programs. Whether you're chasing a championship or personal greatness, we'll <br />
+        get you there.
+      </p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="things">
+      <p>Lifestyle Training :</p>
+      <hr />
+      <h4>Lifestyle training is all about building a fitness plan that fits seamlessly into your <br /> everyday hustle.</h4>
+      <p>
+        We help you create powerful, lasting habits that let you boost your energy, sharpen your mind, <br />
+        and strengthen your body – so you can thrive at work, at home, and everywhere in <br /> between.
+      </p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="item">
+      <p>Weight Loss/Gain</p>
+      <hr />
+      <h4>Sculpt the body you deserve!</h4>
+      <p>
+        Whether you want to burn fat, build muscle or completely transform, this program is <br />
+        laser-focused on real, lasting results. <br />
+        Our expert plans combine target workouts and smart nutrition strategies to help you <br />
+        hit your target goals – and stay there. This is more than a workout; it's a total body <br /> upgrade.
+      </p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="item">
+      <p>Body Building</p>
+      <hr />
+      <h4>Unleash your strongest, most powerful self!</h4>
+      <p>
+        Bodybuilding is about crafting muscles, building strength, and sculpting a body that turns <br /> heads. Through intense,
+        focused training and proven techniques, we'll help you gain serious size, <br />
+        sharp definition and unstoppable confidence. You don’t just run – you dominate.
+      </p>
+      <br>
+      <br>
+      <br>
+    </div>
+  </section>
+
+   <!--Footee Section-->
+    <section class="Footer">
+    <div class="footer">
+      <div class="footer-column">
+        <h3>SPCLUB</h3>
+        <ul>
+          <li><a href="index.html#fitness">Fitness</a></li>
+          <li><a href="index.html#apparel">Apparel</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="return_policy.html">Return Policy</a></li>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1FTpcjc3Xf/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/spclub_ag?igsh=NWlmNHI3ajNhdzc=" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@spclub_ag" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <hr>
+        <br>
+      </div>
+
+      
+      <div class="email"><a href="mailto:surpasspotentialclub@gmail.com">surpasspotentialclub@gmail.com</a></div>
+      <br />
+      <div class="name">Harare, Zimbabwe</div>
+      <div class="copyright">
+        <br /><br /><br /><br />
+        &copy; 2025 SURPASSPOTENTIALCLUB
+      </div>
+    </div>
+  </section>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+ 
+</body>
+</html>

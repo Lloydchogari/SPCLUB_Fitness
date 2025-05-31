@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400&display=swap');
 
-
-
 body {
   margin: 0;
   font-family: 'Baloo Bhai 2', cursive;
   background-color: white;
   color: #000;
+  font-size: 16px; /* Base font-size for rem calculations */
+  padding-top: 4.5rem; /* Default padding for fixed header, adjusted for typical header height */
 }
 
 h1, h3 {
@@ -22,62 +22,64 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 11%;
   background-color: black;
-  padding: 0 40px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 0.75rem 1.5rem; /* Adjusted padding for a slightly slimmer header */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.5);
   z-index: 100;
+  box-sizing: border-box;
+  min-height: 4.5rem; /* Ensure header has a minimum height */
 }
 
 .logo2 {
-  width: 60px;
-  height: 60px;
-  margin-left: 60px;
+  width: 3rem; /* Slightly smaller logo */
+  height: 3rem;
+  margin-left: 0;
 }
 
-nav{ 
+nav{
     display: flex;
-    align-items:center;
-    justify-content: space-between ;
-    flex-wrap: wrap;
+    align-items: center;
+}
 
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 nav ul li{
-    display: inline-block;
     list-style: none;
-    margin: 10px 20px;
-    gap: 100px;
+    margin: 0 1rem; /* Slightly reduced margin */
 }
 
 nav ul li a {
   font-family: 'Arial', sans-serif;
   text-decoration: none;
   color: #fff;
-  font-size: 22px;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 140px;
+  font-size: 1.125rem; /* Slightly smaller font size for nav links */
+  transition: color 0.3s;
+  padding: 0.5rem;
 }
-
 
 nav ul li a:hover {
   color:rgb(221, 103, 6);
   text-decoration: underline;
-  transition: 0.3s;
 }
 
 /* Hero Section */
 .hero {
-  height: 114vh;
+  min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 4.8%;
   background: url(../img/landing.JPG) no-repeat center center/cover;
   position: relative;
+  box-sizing: border-box;
+  padding-left: 1.5rem; /* Adjusted padding */
+  padding-right: 1.5rem;
+  /* Adjusting for body's padding-top, no need for specific hero padding-top if content is centered */
 }
 
 .hero::before {
@@ -94,30 +96,31 @@ nav ul li a:hover {
   color: white;
   position: relative;
   text-align: left;
-  margin-left: 100px;
-  max-width: 1500px;
-  margin-top: -180px;
+  margin-left: 2rem; /* Adjusted margin */
+  max-width: 60rem; /* Adjusted max width */
+  padding: 2rem 0;
 }
 
 .hero-content h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 150px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 6rem); /* Adjusted clamp values */
   font-weight: 500;
-  line-height: 130px;
-  margin-bottom: 60px;
+  line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
 .hero-content span{
-  font-family: 'Archivo', sans serif;
-  font-size: 150px;
+  font-family: 'Archivo', sans-serif;
+  font-size: inherit;
   font-weight: 500;
 }
 
 .p {
   font-family: 'Baloo Bhai 2', sans-serif;
   font-weight: 300;
-  font-size: 32px;
-  margin-bottom: 60px;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem); /* Adjusted clamp values */
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .hero a {
@@ -126,134 +129,183 @@ nav ul li a:hover {
   color: white;
   font-weight: lighter;
   background-color: rgb(221, 103, 6);
-  font-size: 20px;
-  padding: 15px 25px;
-  border-radius: 40px;
+  font-size: 1.125rem; /* Adjusted font size */
+  padding: 0.75rem 1.25rem; /* Adjusted padding */
+  border-radius: 2rem;
   display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: rgb(200, 90, 0);
 }
 
 /* Feature Section */
 .feature-section {
-  padding: 50px 20px;
-  text-align: left;
-  margin-left: 20px;
+  padding: 3rem 1.25rem;
+  text-align: center;
 }
 
 .line hr{
     margin-bottom: 0;
     margin-top: 0;
-    border: 2px solid white;
-  }
+    border: 0.125rem solid #333;
+}
 
 .feature-section h1 {
   text-align: center;
-  font-size: 50px;
+  font-size: clamp(2rem, 4.5vw, 2.75rem); /* Adjusted clamp */
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .feature-section h2 {
   font-family: 'Baloo Bhai 2', sans-serif;
-  font-size: 30px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem); /* Adjusted clamp */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.feature-section p {
-  font-size: 30px;
+.feature-section > p {
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Adjusted clamp */
   text-align: center;
+  margin: 0 auto 2rem auto;
+  max-width: 40rem;
+  line-height: 1.6;
 }
 
 .services-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 120px;
-  padding: 0 40px;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* Adjusted minmax */
+  gap: 1.5rem; /* Adjusted gap */
+  padding: 0 1rem; /* Adjusted padding */
 }
 
 .services-list div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 1.25rem; /* Adjusted padding */
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.08); /* Softer shadow */
 }
 
 .services-list div img {
-  border-radius: 20px;
-  margin-bottom: 10px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 
 .services-list div h2,
 .services-list div p {
-  margin: 0;
+  margin-top: 0;
   padding: 0;
 }
 
 .services-list div p {
-  font-size: 26px;
-  margin-top: 10px;
-  text-align: left;
+  font-size: clamp(0.875rem, 1.7vw, 1rem); /* Adjusted clamp */
+  margin-top: 0.5rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* Coach Section */
 .Coach {
   background-color: white;
-  padding: 60px 20px;
+  padding: 3rem 1.25rem;
+  text-align: center;
 }
 
 .jk h1 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   text-align: center;
-  font-size: 50px;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  margin-bottom: 1.5rem;
 }
+
+.Coach .services-list { /* Used for coach images */
+   gap: 1.5rem;
+   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); /* Allow more coach images per row if space */
+}
+.Coach .services-list div img {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+}
+.Coach .services-list div { /* Remove card style from coach image containers */
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 
 .Coach h3 {
   font-family: 'Baloo Bhai 2', sans-serif;
-  font-size: 30px;
-  margin: 40px 0 10px 60px;
-  text-align: left;
+  font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+  margin: 2rem 0 0.5rem 0;
+  text-align: center;
 }
 
 .Coach h3 + p {
-  font-size: 28px;
-  text-align: left;
-  margin: 0 60px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  max-width: 40rem;
+  line-height: 1.6;
 }
 
 .Coach_2 {
   text-align: center;
+  padding: 3rem 1.25rem;
 }
 
 .Coach_2 h1{
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   text-align: center;
-  font-size: 50px;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  margin-bottom: 1.5rem;
 }
+
+.Coach_2 .services-list { /* Apparel items, use card styling */
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* Consistent with feature section */
+}
+.Coach_2 .services-list div img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 
 .coach-image-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 
 .hover-indicator {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 15px;
-  height: 15px;
-  border: 2px solid black;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 0.1rem solid black;
   background-color: white;
   border-radius: 50%;
-  margin-top: 10px;
-  margin-left: 140px;
+  margin-top: 0.5rem;
   transition: background-color 0.3s ease;
 }
 
@@ -270,254 +322,298 @@ nav ul li a:hover {
   text-decoration: none;
   color: white;
   background-color: rgb(221, 103, 6);
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 40px;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
   display: inline-block;
-  margin: 40px auto;
+  margin: 2rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.butn a:hover {
+  background-color: rgb(200, 90, 0);
 }
 
 /* YouTube Section */
 .you-tube {
   background-color: black;
   color: white;
-  padding: 60px 0;
+  padding: 3rem 1.25rem;
+  text-align: center;
 }
 
-.you-tube h2 {
+.you-tube .services-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 769px) {
+  .you-tube .services-list {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.you-tube > h2 { /* Main title "SPCLUB MEDIA" - ensure it's direct child */
   font-family: 'Archivo', sans-serif;
-  font-size: 40px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+  font-size: clamp(1.8rem, 3.5vw, 2.25rem);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
 }
 
 .you-tube .lastp p {
   font-family: 'Archivo Narrow', sans-serif;
-  font-size: 18px;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   font-weight: 400 !important;
-  letter-spacing: 1px;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-
 .image {
-  margin: auto;
-  margin-left: 60px;
-  margin-bottom: 120px;
+  margin: 0;
+  width: 100%;
+  max-width: 35rem;
+  flex: 1 1 25rem;
+  min-width: 15rem;
+}
+
+.image video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
 }
 
 .info-left {
-  padding-top: 15%;
-  margin-left: 140px;
+  padding: 1rem; /* Add padding for text block */
+  margin-left: 0;
+  text-align: center;
+  flex: 1 1 18rem;
 }
 
-.info-left h2{  
+.info-left h2 { /* Title within info-left, e.g., "Follow the latest..." */
   font-family: 'Archivo', sans-serif;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 
 /* Footer */
- .footer {
-      background-color: #000;
-      color: white;
-      display: flex;
-      justify-content: space-around;
-      padding: 40px 20px;
-      flex-wrap: wrap;
-    }
+.footer {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 2.5rem 1.25rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
 
-    .footer-column h3 {
-      font-family: sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      margin-bottom: 30px;
-      letter-spacing: 0.03em;
-    }
+.footer-column {
+  flex: 1 1 12.5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
 
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 30px;
-    }
+.footer-column h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
 
-    .footer-column ul li {
-      margin-bottom: 30px;
-      font-size: 20px;
-    }
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
 
-    .footer-column ul li a {
-       font-family: sans-serif;
-        font-size: 18px;   
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        letter-spacing: 0.05em;
-    }
+.footer-column ul li {
+  margin-bottom: 0.625rem;
+}
 
-.footer-column ul li a:hover{
-       color:rgb(216, 164, 122);
-       transition: 0.3s;
-    }
-
-  .email a{
+.footer-column ul li a {
+   font-family: 'Baloo Bhai 2', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: white;
     text-decoration: none;
-  }
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
 
-   .email a:hover{
-    color:rgb(216, 164, 122);
-    transition: 0.3s;
-  }
+.footer-column ul li a:hover{
+   color:rgb(216, 164, 122);
+}
 
-.footer-bottom .email {
+.email a{
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email a:hover{
+  color:rgb(216, 164, 122);
+}
+
+.footer-bottom {
   background-color: black;
   color: white;
-  font-family: sans-serif;
-  font-size: 18px;
-  font-weight: 200;
-  letter-spacing: 0.22em;  /* 22% */
+  text-align: center;
+  padding: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-bottom .email {
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
 }
 
 .footer-bottom .name {
-  background-color: black;
-  color: white;
- font-family: sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  margin: 20px 0;
-  line-height: 1;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+  line-height: 1.2;
 }
 
 .footer-bottom .copyright {
-  background-color: black;
-  font-family: sans-serif;
-  font-size: 18px;
-  font-weight: 200;
-  color: #ccc;
-  margin-top: 20px;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #aaa;
+  margin-top: 1rem;
 }
 
-    .footer-bottom hr{
-      margin-left: 50px;
-      margin-right: 50px;
-      
+.footer-bottom hr{
+  margin: 1rem auto;
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-color: #444;
 }
 
-    .footer-bottom {
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+.social-icons {
+  margin-bottom: 1rem;
+}
 
-    .social-icons {
-      margin-bottom: 10px;
-      color: white;
-    }
+.fa-facebook-f, .fa-instagram, .fa-youtube {
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    .fa-facebook-f{
-      color: white;
-    }
+.fa-facebook-f:hover{
+  color: #1877F2;
+  transform: scale(1.2);
+}
 
-    .fa-facebook-f:hover{
-      color: blue;
-      transform: scale(1.3);
-    }
+.fa-instagram:hover{
+  color: #E4405F;
+  transform: scale(1.2);
+}
 
-    .fa-instagram{
-      color: white;
-    }
+.fa-youtube:hover{
+  color: #FF0000;
+  transform: scale(1.2);
+}
 
-    .fa-instagram:hover{
-      color: rgb(204, 45, 71);
-      transform: scale(1.3);
-    }
+.social-icons a i {
+  font-size: 1.25rem;
+}
 
-    .fa-youtube{
-      color: white;
-    }
-
-    .fa-youtube:hover{
-      color: #ff0000;
-      transform: scale(1.3);
-    }
-
-    .social-icons a i {
-      transition: transform 0.3s ease, color 0.3s ease;
-      font-size: 22px;
-    }
-
-    .social-icons i {
-      margin: 0 10px;
-      cursor: pointer;
-    }
+.social-icons i {
+  margin: 0 0.625rem;
+  cursor: pointer;
+}
 
 
+/* ===== Responsive Styles ===== */
 
-  /* ===== Responsive Styles ===== */
-
-@media (max-width: 1024px) {
-  .services-list {
-    flex-wrap: wrap;
-    justify-content: center;
+@media (max-width: 1024px) { /* Larger tablets */
+  .hero-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center; /* Center hero content on tablets */
   }
-
-  .services-list div {
-    margin: 10px;
+  nav ul li {
+    margin: 0 0.75rem; /* Slightly reduce nav item spacing */
+  }
+  nav ul li a {
+    font-size: 1.05rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Tablets and Mobile Nav Activation */
+  body {
+    padding-top: 4.5rem; /* Ensure this matches header min-height */
+  }
   header {
-    flex-direction: column;
-    align-items: center;
+    padding: 0.75rem 1rem; /* Adjust header padding */
+  }
+  .logo2 {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  nav ul { /* Hide desktop nav */
+    display: none;
   }
 
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
+  .hero-content {
+    text-align: center;
+    margin-left: auto; /* Center align */
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    /* clamp handles sizing, but ensure centering if not already */
     text-align: center;
   }
 
-  .hero-content p {
+  .hero-content .p { /* .p class within hero */
     text-align: center;
-    font-size: 1rem;
   }
 
-  .hero-content a {
-    display: inline-block;
-    margin-top: 1rem;
+  .hero-content a { /* Get Started button */
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    width: fit-content;
   }
 
-  .services-list {
-    flex-direction: column;
-    align-items: center;
+  .services-list { /* General services list, applies to features, apparel */
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); /* Adjust for smaller screens */
+    gap: 1rem;
   }
 
-  .services-list div {
-    width: 90%;
-    max-width: 350px;
+  .Coach .services-list { /* Coach images, can stack to single column */
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); /* Smaller min for coach images */
+  }
+   .Coach .services-list div img{
+    max-width: 12rem; /* Limit coach image size if needed */
   }
 
   .you-tube .services-list {
-    flex-direction: column;
-    align-items: center;
+    /* Already flex-direction: column by default for .you-tube .services-list */
   }
 
-  .you-tube video {
-    width: 100%;
-    height: auto;
-  }
-
-  .info-left {
-    text-align: center;
+  .info-left, .image { /* Children of .you-tube .services-list */
+    flex-basis: 100%; /* Ensure they take full width when stacked */
+    max-width: 100%;
   }
 
   .footer {
@@ -527,45 +623,86 @@ nav ul li a:hover {
   }
 
   .footer-column {
-    margin-bottom: 1rem;
-  }
-
-  .footer-bottom {
-    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 100%; /* Let columns take full width when stacked */
+    max-width: 25rem; /* Optional: constrain width for readability */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Small mobile screens */
+  body {
+    padding-top: 4rem; /* Adjust if header becomes smaller */
+  }
+  header {
+    min-height: 4rem;
+  }
+  .logo2 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
   .hero-content h1 {
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem); /* Adjust clamp for small screens */
   }
 
-  .hero-content p {
-    font-size: 0.9rem;
+  .hero-content .p {
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Adjust clamp */
   }
 
-  .services-list div img {
-    width: 100%;
-    height: auto;
+  .feature-section {
+    padding: 2rem 1rem;
+  }
+  .services-list {
+    grid-template-columns: 1fr; /* Stack cards */
+    padding: 0 0.5rem;
   }
 
-  .Coach p, .Coach_2 p {
-    padding: 0 1rem;
+  .Coach .services-list {
+      grid-template-columns: 1fr; /* Stack coach images */
+  }
+  .Coach_2 .services-list {
+      grid-template-columns: 1fr; /* Stack apparel cards */
+  }
+
+  .Coach p, .Coach_2 p, .Coach h3 + p {
+    padding: 0 0.5rem;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  }
+
+  .butn a { /* Make buttons slightly smaller on small screens */
     font-size: 0.95rem;
+    padding: 0.6rem 1rem;
   }
+
+  .you-tube > h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  .info-left h2 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
 
   .email, .name {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+  }
+  .footer-column h3 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+  .footer-column ul li a {
+    font-size: 0.85rem;
+  }
+  .social-icons a i {
+    font-size: 1.1rem;
   }
 }
 
 .menu-icon {
   display: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
   cursor: pointer;
-  padding: 20px;
-  z-index: 200;
+  padding: 0.25rem 0.5rem; /* Fine-tune padding */
+  z-index: 1010; /* Ensure it's above other header content if needed */
 }
 
 @media (max-width: 768px) {
@@ -573,21 +710,21 @@ nav ul li a:hover {
     display: block;
   }
 
-  nav {
-    width: 100%;
-  }
-
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: black;
+    background-color: rgba(0,0,0,0.95); /* Slightly transparent black */
     position: absolute;
-    top: 80px;
+    top: 100%; /* Position below the header */
     left: 0;
     width: 100%;
     text-align: center;
-    z-index: 150;
-    padding-bottom: 20px;
+    z-index: 1000; /* Ensure it's above content but below .menu-icon if it needs to be interactive */
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #333;
+    max-height: calc(100vh - 4.5rem); /* Limit height and allow scroll if many items */
+    overflow-y: auto;
   }
 
   .nav-links.active {
@@ -595,14 +732,40 @@ nav ul li a:hover {
   }
 
   .nav-links li {
-    margin: 10px 0;
+    margin: 0;
   }
 
-  nav ul li a {
-    margin: 0;
-    padding: 10px;
-    font-size: 20px;
+  .nav-links li a {
+      display: block;
+      padding: 0.85rem 1rem; /* Adjust padding for tap targets */
+      font-size: 1.1rem;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #222; /* Separators between links */
+  }
+  .nav-links li:last-child a {
+      border-bottom: none;
+  }
+  .nav-links li a:hover {
+      background-color: rgb(221, 103, 6);
+      color: black;
   }
 }
 
-
+/* Final check on font loading - ensure Archivo is used where intended */
+.hero-content span, .you-tube h2, .info-left h2 { /* Titles that used Archivo */
+    font-family: 'Archivo', sans-serif;
+}
+/* Ensure other key text elements use consistent project fonts */
+h1, h3, .jk h1, .Coach_2 h1, .footer-column h3, .footer-bottom .name { /* Orbitron titles */
+    font-family: 'Orbitron', sans-serif;
+}
+body, .p, .feature-section h2, .feature-section > p, .services-list div p, .Coach h3, .Coach h3 + p, .footer-column ul li a, .footer-bottom .email, .footer-bottom .copyright { /* Baloo Bhai 2 for body/paragraph text */
+    font-family: 'Baloo Bhai 2', cursive;
+}
+nav ul li a { /* Arial was used here, change if desired */
+  font-family: 'Arial', sans-serif; /* Or 'Archivo Narrow', sans-serif for consistency */
+}
+.hero a, .butn a, .you-tube .lastp p { /* Archivo Narrow for buttons/special text */
+    font-family: 'Archivo Narrow', sans-serif;
+}

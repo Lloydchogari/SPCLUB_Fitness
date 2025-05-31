@@ -72,14 +72,13 @@ nav ul li a:hover {
 .hero {
   min-height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; (Centering content for mobile below) */
   align-items: center;
   background: url(../img/landing.JPG) no-repeat center center/cover;
   position: relative;
   box-sizing: border-box;
-  padding-left: 1.5rem; /* Adjusted padding */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
-  /* Adjusting for body's padding-top, no need for specific hero padding-top if content is centered */
 }
 
 .hero::before {
@@ -95,15 +94,16 @@ nav ul li a:hover {
 .hero-content {
   color: white;
   position: relative;
-  text-align: left;
-  margin-left: 2rem; /* Adjusted margin */
-  max-width: 60rem; /* Adjusted max width */
-  padding: 2rem 0;
+  text-align: center; /* Default to center for mobile, override for larger if needed */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60rem;
+  padding: 2rem 1rem; /* Added horizontal padding */
 }
 
 .hero-content h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(2.5rem, 7vw, 6rem); /* Adjusted clamp values */
+  font-size: clamp(2.5rem, 7vw, 6rem);
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -115,10 +115,10 @@ nav ul li a:hover {
   font-weight: 500;
 }
 
-.p {
+.p { /* This is the class for paragraphs within .hero-content */
   font-family: 'Baloo Bhai 2', sans-serif;
   font-weight: 300;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem); /* Adjusted clamp values */
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -129,10 +129,11 @@ nav ul li a:hover {
   color: white;
   font-weight: lighter;
   background-color: rgb(221, 103, 6);
-  font-size: 1.125rem; /* Adjusted font size */
-  padding: 0.75rem 1.25rem; /* Adjusted padding */
+  font-size: 1.125rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 2rem;
-  display: inline-block;
+  display: inline-block; /* Will be centered by text-align:center on parent */
+  margin-top: 1rem; /* Added margin for spacing */
   transition: background-color 0.3s ease;
 }
 
@@ -154,14 +155,14 @@ nav ul li a:hover {
 
 .feature-section h1 {
   text-align: center;
-  font-size: clamp(2rem, 4.5vw, 2.75rem); /* Adjusted clamp */
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
 .feature-section h2 {
   font-family: 'Baloo Bhai 2', sans-serif;
-  font-size: clamp(1.2rem, 2.8vw, 1.5rem); /* Adjusted clamp */
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
@@ -170,7 +171,7 @@ nav ul li a:hover {
 }
 
 .feature-section > p {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Adjusted clamp */
+  font-size: clamp(1rem, 2vw, 1.25rem);
   text-align: center;
   margin: 0 auto 2rem auto;
   max-width: 40rem;
@@ -179,9 +180,9 @@ nav ul li a:hover {
 
 .services-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* Adjusted minmax */
-  gap: 1.5rem; /* Adjusted gap */
-  padding: 0 1rem; /* Adjusted padding */
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
 }
 
 .services-list div {
@@ -190,9 +191,9 @@ nav ul li a:hover {
   align-items: center;
   text-align: center;
   background-color: #f9f9f9;
-  padding: 1.25rem; /* Adjusted padding */
+  padding: 1.25rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.08); /* Softer shadow */
+  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.08);
 }
 
 .services-list div img {
@@ -210,7 +211,7 @@ nav ul li a:hover {
 }
 
 .services-list div p {
-  font-size: clamp(0.875rem, 1.7vw, 1rem); /* Adjusted clamp */
+  font-size: clamp(0.875rem, 1.7vw, 1rem);
   margin-top: 0.5rem;
   text-align: center;
   line-height: 1.5;
@@ -231,16 +232,16 @@ nav ul li a:hover {
   margin-bottom: 1.5rem;
 }
 
-.Coach .services-list { /* Used for coach images */
+.Coach .services-list {
    gap: 1.5rem;
-   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); /* Allow more coach images per row if space */
+   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 .Coach .services-list div img {
   border-radius: 0.75rem;
   max-width: 100%;
   height: auto;
 }
-.Coach .services-list div { /* Remove card style from coach image containers */
+.Coach .services-list div {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
@@ -276,9 +277,9 @@ nav ul li a:hover {
   margin-bottom: 1.5rem;
 }
 
-.Coach_2 .services-list { /* Apparel items, use card styling */
+.Coach_2 .services-list {
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* Consistent with feature section */
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 }
 .Coach_2 .services-list div img {
   max-width: 100%;
@@ -361,7 +362,7 @@ nav ul li a:hover {
   }
 }
 
-.you-tube > h2 { /* Main title "SPCLUB MEDIA" - ensure it's direct child */
+.you-tube > h2 {
   font-family: 'Archivo', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.25rem);
   margin-bottom: 1rem;
@@ -393,13 +394,13 @@ nav ul li a:hover {
 }
 
 .info-left {
-  padding: 1rem; /* Add padding for text block */
+  padding: 1rem;
   margin-left: 0;
   text-align: center;
   flex: 1 1 18rem;
 }
 
-.info-left h2 { /* Title within info-left, e.g., "Follow the latest..." */
+.info-left h2 {
   font-family: 'Archivo', sans-serif;
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   font-weight: 700;
@@ -545,12 +546,12 @@ nav ul li a:hover {
 
 @media (max-width: 1024px) { /* Larger tablets */
   .hero-content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: center; /* Center hero content on tablets */
+    /* margin-left: 1rem; (Handled by auto margins now) */
+    /* margin-right: 1rem; */
+    text-align: center;
   }
   nav ul li {
-    margin: 0 0.75rem; /* Slightly reduce nav item spacing */
+    margin: 0 0.75rem;
   }
   nav ul li a {
     font-size: 1.05rem;
@@ -559,60 +560,58 @@ nav ul li a:hover {
 
 @media (max-width: 768px) { /* Tablets and Mobile Nav Activation */
   body {
-    padding-top: 4.5rem; /* Ensure this matches header min-height */
+    padding-top: 4.5rem;
   }
   header {
-    padding: 0.75rem 1rem; /* Adjust header padding */
+    padding: 0.75rem 1rem;
   }
-  .logo2 {
-    width: 2.75rem;
-    height: 2.75rem;
+  .logo2 { /* Ensure logo is on the left */
+    order: -1; /* Pushes it to the start if header becomes column (it shouldn't) */
   }
-  nav ul { /* Hide desktop nav */
+  .menu-icon { /* Ensure menu icon is on the right */
+     /* padding already set, positioning handled by justify-content: space-between on header */
+  }
+
+  nav ul {
     display: none;
   }
 
   .hero-content {
     text-align: center;
-    margin-left: auto; /* Center align */
-    margin-right: auto;
+    /* margin-left: auto; (already set) */
+    /* margin-right: auto; (already set) */
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
   .hero-content h1 {
-    /* clamp handles sizing, but ensure centering if not already */
     text-align: center;
   }
 
-  .hero-content .p { /* .p class within hero */
+  .hero-content .p {
     text-align: center;
   }
 
-  .hero-content a { /* Get Started button */
+  .hero-content a {
     display: block;
     margin: 1.5rem auto 0 auto;
     width: fit-content;
   }
 
-  .services-list { /* General services list, applies to features, apparel */
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); /* Adjust for smaller screens */
+  .services-list {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap: 1rem;
   }
 
-  .Coach .services-list { /* Coach images, can stack to single column */
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); /* Smaller min for coach images */
+  .Coach .services-list {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
    .Coach .services-list div img{
-    max-width: 12rem; /* Limit coach image size if needed */
+    max-width: 12rem;
   }
 
-  .you-tube .services-list {
-    /* Already flex-direction: column by default for .you-tube .services-list */
-  }
-
-  .info-left, .image { /* Children of .you-tube .services-list */
-    flex-basis: 100%; /* Ensure they take full width when stacked */
+  .info-left, .image {
+    flex-basis: 100%;
     max-width: 100%;
   }
 
@@ -624,14 +623,14 @@ nav ul li a:hover {
 
   .footer-column {
     margin-bottom: 1.5rem;
-    width: 100%; /* Let columns take full width when stacked */
-    max-width: 25rem; /* Optional: constrain width for readability */
+    width: 100%;
+    max-width: 25rem;
   }
 }
 
-@media (max-width: 480px) { /* Small mobile screens */
+@media (max-width: 480px) { /* General Small mobile screens */
   body {
-    padding-top: 4rem; /* Adjust if header becomes smaller */
+    padding-top: 4rem;
   }
   header {
     min-height: 4rem;
@@ -642,26 +641,26 @@ nav ul li a:hover {
   }
 
   .hero-content h1 {
-    font-size: clamp(2rem, 6vw, 3.5rem); /* Adjust clamp for small screens */
+    font-size: clamp(2rem, 6vw, 3.5rem);
   }
 
   .hero-content .p {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Adjust clamp */
+    font-size: clamp(1rem, 2vw, 1.2rem);
   }
 
   .feature-section {
     padding: 2rem 1rem;
   }
   .services-list {
-    grid-template-columns: 1fr; /* Stack cards */
+    grid-template-columns: 1fr;
     padding: 0 0.5rem;
   }
 
   .Coach .services-list {
-      grid-template-columns: 1fr; /* Stack coach images */
+      grid-template-columns: 1fr;
   }
   .Coach_2 .services-list {
-      grid-template-columns: 1fr; /* Stack apparel cards */
+      grid-template-columns: 1fr;
   }
 
   .Coach p, .Coach_2 p, .Coach h3 + p {
@@ -669,7 +668,7 @@ nav ul li a:hover {
     font-size: clamp(0.9rem, 1.8vw, 1.05rem);
   }
 
-  .butn a { /* Make buttons slightly smaller on small screens */
+  .butn a {
     font-size: 0.95rem;
     padding: 0.6rem 1rem;
   }
@@ -680,7 +679,6 @@ nav ul li a:hover {
   .info-left h2 {
     font-size: clamp(1rem, 2vw, 1.25rem);
   }
-
 
   .email, .name {
     font-size: 0.875rem;
@@ -696,13 +694,124 @@ nav ul li a:hover {
   }
 }
 
+/* Styles specifically for 390px viewport width and below */
+@media (max-width: 390px) {
+  /* Navbar (header) */
+  /* .logo2 is already positioned by flexbox in header */
+  /* .menu-icon is already positioned by flexbox in header */
+  /* .nav-links are handled by existing JS/CSS for mobile */
+
+  /* Hero Section (.hero) */
+  .hero-content h1 {
+    font-size: 80px !important; /* Override clamp if necessary, but clamp should ideally handle it */
+    font-weight: 400 !important;
+    text-align: center !important; /* Ensure centering */
+  }
+  .hero-content .p { /* Target the .p class specifically */
+    font-size: 18px !important;
+    text-align: center !important; /* Ensure centering */
+  }
+  /* .hero a (Get Started button) positioning is handled by text-align:center on .hero-content */
+
+  /* Feature Section (.feature-section) */
+  .feature-section > h1 { /* Direct child h1 */
+    font-size: 23px !important;
+  }
+  .feature-section > p { /* Direct child p */
+    font-size: 12px !important;
+  }
+  .services-list div h2 { /* h2 within service cards */
+    font-size: 20px !important;
+    font-weight: 600 !important;
+  }
+  .services-list div p { /* p within service cards */
+    font-size: 18px !important;
+  }
+
+  /* Coach Section (.Coach) */
+  .jk h1 { /* Specific h1 in .jk container */
+    font-size: 23px !important;
+    font-weight: 400 !important;
+  }
+  .Coach h3 {
+    font-size: 20px !important;
+  }
+  .Coach h3 + p {
+    font-size: 18px !important;
+  }
+
+  /* Apparel Section (.Coach_2) */
+  .Coach_2 h1 {
+    font-size: 23px !important;
+    font-weight: 400 !important;
+  }
+  .Coach_2 .coach-image-wrapper .hover-indicator { /* More specific selector */
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .Coach_2 .butn a { /* Button in Apparel section */
+    display: block; /* To allow margin auto centering */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px !important; /* Smaller padding */
+    font-size: 14px !important; /* Smaller font */
+    width: fit-content; /* Adjust width to content */
+  }
+
+  /* YouTube Section (.you-tube) */
+  .you-tube .image video { /* Target video element */
+    width: 300px !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .you-tube .info-left h2,
+  .you-tube .info-left .lastp p, /* Targeting p inside .lastp */
+  .you-tube .info-left .butn a { /* Button text in YouTube section */
+    font-size: 12px !important;
+  }
+   .you-tube .info-left .butn a { /* Specific padding for YT button if needed */
+      padding: 6px 12px !important;
+   }
+
+
+  /* Footer Section (.Footer) */
+  /* Note: HTML has <section class="Footer">, CSS uses .footer, then .footer-column etc. Assuming .footer is the main selector */
+  .footer .footer-column h3 {
+    font-size: 20px !important;
+  }
+  .footer .footer-column ul li a {
+    font-size: 15px !important;
+  }
+  .footer .social-icons {
+    display: flex; /* Ensure flex for centering */
+    justify-content: center; /* Center icons */
+    align-items: center;
+  }
+  .footer .footer-bottom hr {
+    width: 295px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .footer .footer-bottom .email {
+    font-size: 10px !important;
+  }
+  .footer .footer-bottom .name {
+    font-size: 12px !important;
+  }
+  .footer .footer-bottom .copyright {
+    font-size: 10px !important;
+  }
+}
+
+
 .menu-icon {
   display: none;
   font-size: 1.8rem;
   color: white;
   cursor: pointer;
-  padding: 0.25rem 0.5rem; /* Fine-tune padding */
-  z-index: 1010; /* Ensure it's above other header content if needed */
+  padding: 0.25rem 0.5rem;
+  z-index: 1010;
 }
 
 @media (max-width: 768px) {
@@ -713,17 +822,17 @@ nav ul li a:hover {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.95); /* Slightly transparent black */
+    background-color: rgba(0,0,0,0.95);
     position: absolute;
-    top: 100%; /* Position below the header */
+    top: 100%;
     left: 0;
     width: 100%;
     text-align: center;
-    z-index: 1000; /* Ensure it's above content but below .menu-icon if it needs to be interactive */
+    z-index: 1000;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
     border-top: 1px solid #333;
-    max-height: calc(100vh - 4.5rem); /* Limit height and allow scroll if many items */
+    max-height: calc(100vh - 4.5rem);
     overflow-y: auto;
   }
 
@@ -737,11 +846,11 @@ nav ul li a:hover {
 
   .nav-links li a {
       display: block;
-      padding: 0.85rem 1rem; /* Adjust padding for tap targets */
+      padding: 0.85rem 1rem;
       font-size: 1.1rem;
       color: white;
       text-decoration: none;
-      border-bottom: 1px solid #222; /* Separators between links */
+      border-bottom: 1px solid #222;
   }
   .nav-links li:last-child a {
       border-bottom: none;
@@ -753,19 +862,26 @@ nav ul li a:hover {
 }
 
 /* Final check on font loading - ensure Archivo is used where intended */
-.hero-content span, .you-tube h2, .info-left h2 { /* Titles that used Archivo */
+.hero-content span, .you-tube > h2, .info-left h2 { /* Titles that used Archivo */
     font-family: 'Archivo', sans-serif;
 }
 /* Ensure other key text elements use consistent project fonts */
-h1, h3, .jk h1, .Coach_2 h1, .footer-column h3, .footer-bottom .name { /* Orbitron titles */
+h1, h3, .jk h1, .Coach_2 h1, .footer .footer-column h3, .footer-bottom .name { /* Orbitron titles */
     font-family: 'Orbitron', sans-serif;
 }
-body, .p, .feature-section h2, .feature-section > p, .services-list div p, .Coach h3, .Coach h3 + p, .footer-column ul li a, .footer-bottom .email, .footer-bottom .copyright { /* Baloo Bhai 2 for body/paragraph text */
+body, .p, .feature-section h2, .feature-section > p, .services-list div p, .Coach h3, .Coach h3 + p, .footer .footer-column ul li a, .footer-bottom .email, .footer-bottom .copyright { /* Baloo Bhai 2 for body/paragraph text */
     font-family: 'Baloo Bhai 2', cursive;
 }
-nav ul li a { /* Arial was used here, change if desired */
-  font-family: 'Arial', sans-serif; /* Or 'Archivo Narrow', sans-serif for consistency */
+nav ul li a {
+  font-family: 'Arial', sans-serif;
 }
-.hero a, .butn a, .you-tube .lastp p { /* Archivo Narrow for buttons/special text */
+.hero a, .butn a, .you-tube .lastp p {
     font-family: 'Archivo Narrow', sans-serif;
 }
+
+/* Ensure .footer class is targeted if that's what's in the HTML */
+/* The CSS provided had .footer for the main footer container */
+/* If the HTML has <section class="Footer">, then rules should be .Footer */
+/* For now, assuming .footer is correct as per previous CSS structure. */
+/* If footer styles are not applying, check HTML class name and update selectors here. */
+/* Example: .Footer .footer-column h3 if HTML is <section class="Footer"> */
